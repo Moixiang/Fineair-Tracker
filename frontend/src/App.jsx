@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <p>{count}</p>
       <button onClick={() => setCount(count + 100)}>Öka</button>
     </div>

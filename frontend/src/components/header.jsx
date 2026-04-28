@@ -5,7 +5,7 @@ const Header = () => {
         <div className="sideLogo">
           <ul>
             <li>
-              <a href="#top">Fine</a>
+              <a href="#top">FINE AIR</a>
             </li>
           </ul>
           <span>SKY IS THE LIMIT</span>
@@ -18,7 +18,17 @@ const Header = () => {
           />
         </div>
 
-        <div className="hamburgerButton"></div>
+        <div>
+          <button className="openNavbar" onClick="openNavbar()">
+            &#9776;
+          </button>
+        </div>
+
+        <div className="closeNavbar">
+          <button className="closeNavbar" onClick="closeNavbar()">
+            &#9932;
+          </button>
+        </div>
       </nav>
     </header>
   );

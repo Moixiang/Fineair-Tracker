@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header>
+    <header className="">
       <nav className="navigationContainer">
         <div className="sideLogo">
           <ul>

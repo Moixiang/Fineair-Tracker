@@ -15,7 +15,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className="search">
+        <div className="searchBar">
           <input
             type="search"
             placeholder="Search tail number, aircraft or airport..."

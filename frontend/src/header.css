@@ -1,5 +1,48 @@
-header {
-    padding: 20px;
+* {
+    padding: 0;
     margin: 0;
-    background-color: green;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+}
+
+header {
+    background-color: #1e1710;
+}
+
+.navigationContainer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    border-bottom: 0.5px solid rgba(196, 164, 107, 0.15);
+    z-index: 100;
+}
+
+.closeNavbar {
+    display: none;
+}
+
+.siteLogo ul li {
+    list-style: none;
+}
+
+.siteLogo ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.fineAir {
+    font-size: 12px;
+    letter-spacing: .22em;
+    color: #c4a46b;
+    text-decoration: none;
+}
+
+
+.slogan {
+    font-size: 8px;
+    letter-spacing: .22em;
+    color: #d6c9b0;
 }

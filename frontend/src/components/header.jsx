@@ -1,14 +1,18 @@
+import "../header.css";
+
 const Header = () => {
   return (
-    <header className="">
+    <header>
       <nav className="navigationContainer">
-        <div className="sideLogo">
+        <div className="siteLogo">
           <ul>
             <li>
-              <a href="#top">FINE AIR</a>
+              <a href="#top">
+                <span className="fineAir">FINE AIR</span>
+                <span className="slogan">SKY IS THE LIMIT</span>
+              </a>
             </li>
           </ul>
-          <span>SKY IS THE LIMIT</span>
         </div>
 
         <div className="search">

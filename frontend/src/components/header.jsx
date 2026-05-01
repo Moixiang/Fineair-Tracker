@@ -23,15 +23,17 @@ const Header = () => {
         </div>
 
         <div>
-          <button className="openNavbar" onClick="openNavbar()">
+          {/*<button className="openNavbar" onClick="openNavbar()">
             &#9776;
-          </button>
+          </button>*/}
+          <button className="openNavbar">&#9776;</button>
         </div>
 
         <div className="closeNavbar">
-          <button className="closeNavbar" onClick="closeNavbar()">
+          {/* <button className="closeNavbar" onClick="closeNavbar()">
             &#9932;
-          </button>
+          </button>*/}
+          <button className="closeNavbar">&#9932;</button>
         </div>
       </nav>
     </header>

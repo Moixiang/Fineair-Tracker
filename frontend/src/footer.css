@@ -1,0 +1,26 @@
+footer {
+    background: #030a0f;
+    color: #9a8a72;
+    padding: 36px 72px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footerNavigationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerLinks ul li {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerLinks a {
+    color: #9a8a72;
+    text-decoration: none;
+    margin: 0px 20px;
+}

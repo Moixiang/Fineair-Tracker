@@ -26,7 +26,7 @@ const Footer = () => {
 
       <footer>
         <nav className="footerNavigationContainer">
-          <div className="siteLogo">
+          <div className="footerSiteLogo">
             <ul>
               <li>
                 <a href="#top">

@@ -2,7 +2,7 @@ footer {
     background: #030a0f;
     color: #9a8a72;
     padding: 36px 72px;
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
     font-family: 'Josefin Sans', sans-serif;
@@ -23,4 +23,42 @@ footer {
     color: #9a8a72;
     text-decoration: none;
     margin: 0px 20px;
+}
+
+.footerSiteLogo ul li {
+    list-style: none;
+}
+
+.footerSiteLogo ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1025px) {
+    footer {
+        padding: 0px;
+    }
+
+    .footerNavigationContainer {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .footerSiteLogo,
+    .footerLinks,
+    .copyright {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .footerLinks ul li {
+        flex-direction: column;
+        padding: 0.6rem;
+    }
+
+    .footerLinks a {
+        padding: 0.3rem;
+    }
 }

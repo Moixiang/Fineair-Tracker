@@ -75,3 +75,9 @@ header {
     gap: 3.5px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 426px) {
+    .searchBar input {
+        width: 100%;
+    }
+}

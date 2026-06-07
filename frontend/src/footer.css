@@ -48,7 +48,11 @@ footer {
     .footerSiteLogo,
     .footerLinks,
     .copyright {
-        padding: 5px;
+        padding: 7px;
+    }
+
+    .footerSiteLogo {
+        text-align: center;
     }
 }
 

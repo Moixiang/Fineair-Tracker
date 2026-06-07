@@ -54,7 +54,8 @@ footer {
 
 @media screen and (max-width: 541px) {
     .footerLinks ul li {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 3fr auto;
         padding: 0.6rem;
     }
 

@@ -46,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 28px;
 }
 
 .tableEyebrow {
@@ -62,6 +63,10 @@
     height: 0.5px;
     background: #c4a46b;
     margin-right: 12px;
+}
+
+.flightTable {
+    width: 100%;
 }
 
 .tableTitle {
@@ -85,4 +90,19 @@
 
 .tableHeaderRight a:hover {
     font-size: 11px;
+}
+
+.tableRowHeader {
+    display: grid;
+    grid-template-columns: 140px 1fr 120px 100px 100px;
+    padding: 8px 20px;
+    background: rgba(196, 164, 107, .05);
+    border-bottom: 0.5px solid rgba(196, 164, 107, .12);
+    text-align: left;
+}
+
+.tableRowHeader th {
+    font-size: 8px;
+    letter-spacing: .2em;
+    color: #9a8a72;
 }

@@ -69,7 +69,17 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <table className="flightTable"></table>
+        <table className="flightTable">
+          <thead>
+            <tr className="tableRowHeader">
+              <th>AIRCRAFT</th>
+              <th>ROUTE</th>
+              <th>ALTITUDE</th>
+              <th>SPEED</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+        </table>
       </section>
     </div>
   );

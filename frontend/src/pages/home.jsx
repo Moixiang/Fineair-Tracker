@@ -96,7 +96,7 @@ export default function Home() {
             </tr>
           </thead>
           <tbody>
-            {flights.slice(0, 4).map((flight) => (
+            {flights.slice(0, 5).map((flight) => (
               <tr key={flight.id}>
                 <td className="row">
                   <span className="flightCallsign">{flight.callsign}</span>
@@ -105,7 +105,7 @@ export default function Home() {
                 <td className="row">
                   <span className="flightRoute">
                     <span className="flightAirport">{flight.from}</span>
-                    <span className="flightArrow"> → </span>
+                    <span className="flightArrow"> ——› </span>
                     <span className="flightAirport">{flight.to}</span>
                   </span>
                   <span className="flightCities">

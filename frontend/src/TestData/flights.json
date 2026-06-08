@@ -50,9 +50,9 @@
     "to": "TEB",
     "toCity": "New York",
     "altitude": "43,000 m",
-    "altitudeFt": 43000,
+    "altitudeFt": "141,076 ft",
     "speed": "905 km/h",
-    "mach": "M0.90",
+    "mach": "M0.85",
     "status": "AIRBORNE"
   },
   {
@@ -63,11 +63,11 @@
     "fromCity": "Stockholm",
     "to": "LAX",
     "toCity": "Los Angeles",
-    "altitude": "41,000 ft",
-    "altitudeFt": 41000,
-    "speed": "890 km/h",
-    "mach": "M0.89",
-    "status": "AIRBORNE"
+    "altitude": "—",
+    "altitudeFt": "On ground",
+    "speed": "—",
+    "mach": "—",
+    "status": "CANCELLED"
   },
   {
     "id": 6,
@@ -77,10 +77,10 @@
     "fromCity": "Frankfurt",
     "to": "NCE",
     "toCity": "Nice",
-    "altitude": "37,000 ft",
-    "altitudeFt": 37000,
+    "altitude": "37,000 m",
+    "altitudeFt": "121,391 ft",
     "speed": "820 km/h",
-    "mach": "M0.80",
+    "mach": "M0.77",
     "status": "AIRBORNE"
   },
   {
@@ -91,10 +91,10 @@
     "fromCity": "Geneva",
     "to": "DOH",
     "toCity": "Doha",
-    "altitude": "39,000 ft",
-    "altitudeFt": 39000,
+    "altitude": "39,000 m",
+    "altitudeFt": "127,952 ft",
     "speed": "875 km/h",
-    "mach": "M0.87",
+    "mach": "M0.82",
     "status": "AIRBORNE"
   },
   {

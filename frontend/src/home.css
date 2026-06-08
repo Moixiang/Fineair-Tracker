@@ -63,3 +63,26 @@
     background: #c4a46b;
     margin-right: 12px;
 }
+
+.tableTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #f0e8d8;
+    margin-top: 8px;
+}
+
+.tableHeaderRight li {
+    list-style: none;
+}
+
+.tableHeaderRight a {
+    text-decoration: none;
+    color: #c4a46b;
+    font-size: 10px;
+    transition: 500ms;
+}
+
+.tableHeaderRight a:hover {
+    font-size: 11px;
+}

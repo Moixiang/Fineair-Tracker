@@ -59,9 +59,7 @@ export default function Home() {
         <div className="tableHeader">
           <div className="tableHeaderLeft">
             <span className="tableEyebrow">LIVE FLIGHTS</span>
-            <span className="tableTitle">
-              <h1>Right now, in the air.</h1>
-            </span>
+            <span className="tableTitle">Right now, in the air.</span>
           </div>
           <div className="tableHeaderRight">
             <ul>

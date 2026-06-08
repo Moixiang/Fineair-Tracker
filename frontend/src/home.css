@@ -1,0 +1,65 @@
+.mainSite {
+    padding: 50px 0px;
+}
+
+.statContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    background: #1e1710;
+}
+
+.statCell {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 0.5px solid rgba(196, 164, 107, 0.08);
+}
+
+.statNumber {
+    font-family: 'Cormorant Garamond', serif;
+    color: #c4a46b;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.statCell span {
+    display: block;
+    text-align: center;
+}
+
+.statLabel {
+    font-size: 8px;
+    letter-spacing: .22em;
+    margin-top: 8px;
+    color: #9a8a72;
+}
+
+/* --------------------------- Live Flights --------------------------- */
+.liveFlights {
+    background-color: #1e1710;
+    padding: 56px 72px;
+    border-top: 0.5px solid rgba(196, 164, 107, 0.08);
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tableEyebrow {
+    font-size: 9px;
+    align-items: center;
+    letter-spacing: .28em;
+    display: flex;
+    color: #c4a46b;
+}
+
+.tableEyebrow::before {
+    content: '';
+    width: 24px;
+    height: 0.5px;
+    background: #c4a46b;
+    margin-right: 12px;
+}

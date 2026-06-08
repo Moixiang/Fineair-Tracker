@@ -1,4 +1,4 @@
-import "./home.css";
+import "../home.css";
 import { useState, useEffect } from "react";
 
 export const API_BASE = "API";
@@ -32,32 +32,47 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="siteStats">
+    <div className="mainSite">
       <section className="statContainer">
         <div className="statCell">
-          <span className="statNumber">
-            {stats.aircraftTracked.toLocaleString()}
-          </span>
+          <span className="statNumber">{stats.aircraftTracked || "..."}</span>
           <span className="statLabel">AIRCRAFT TRACKED</span>
         </div>
 
         <div className="statCell">
-          <span className="statNumber">{stats.airborneNow}</span>
+          <span className="statNumber">{stats.airborneNow || "..."}</span>
           <span className="statLabel">AIRBORNE RIGHT NOW</span>
         </div>
 
         <div className="statCell">
-          <span className="statNumber">{stats.countriesCovered}</span>
+          <span className="statNumber">{stats.countriesCovered || "..."}</span>
           <span className="statLabel">COUNTRIES COVERED</span>
         </div>
 
         <div className="statCell">
-          <span className="statNumber">{stats.aircraftTypes}</span>
+          <span className="statNumber">{stats.aircraftTypes || "..."}</span>
           <span className="statLabel">AIRCRAFT TYPES</span>
         </div>
       </section>
 
-      <section className="liveFlights"></section>
+      <section className="liveFlights">
+        <div className="tableHeader">
+          <div className="tableHeaderLeft">
+            <span className="tableEyebrow">LIVE FLIGHTS</span>
+            <span className="tableTitle">
+              <h1>Right now, in the air.</h1>
+            </span>
+          </div>
+          <div className="tableHeaderRight">
+            <ul>
+              <li>
+                <a href="">View all →</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <table className="flightTable"></table>
+      </section>
     </div>
   );
 }

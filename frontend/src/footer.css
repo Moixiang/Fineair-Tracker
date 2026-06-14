@@ -2,7 +2,7 @@ footer {
     background: #030a0f;
     color: #9a8a72;
     padding: 36px 72px;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
     font-family: 'Josefin Sans', sans-serif;

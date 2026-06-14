@@ -1,5 +1,5 @@
 import "../home.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import flightsData from "../TestData/flights.json";
 
 export const API_BASE = "API";
@@ -47,36 +47,67 @@ export default function Home() {
     fetchFlights();
   }, []);
 
-  const popularRoutes = flights
-    .reduce((acc, flight) => {
-      const route = `${flight.from} → ${flight.to}`;
-      const existing = acc.find((r) => r.route === route);
-      if (existing) {
-        existing.flights += 1;
-      } else {
-        acc.push({ id: route, route, flights: 1 });
-      }
-      return acc;
-    }, [])
-    .sort((a, b) => b.flights - a.flights)
-    .slice(0, 4);
+  const popularRoutes = useMemo(() => {
+    return flights
+      .reduce((acc, flight) => {
+        const route = `${flight.from} → ${flight.to}`;
+        const existing = acc.find((r) => r.route === route);
+        if (existing) {
+          existing.flights += 1;
+        } else {
+          acc.push({ id: route, route, flights: 1 });
+        }
+        return acc;
+      }, [])
+      .sort((a, b) => b.flights - a.flights)
+      .slice(0, 4);
+  }, [flights]);
 
-  const fleetBreakdown = flights
-    .reduce((acc, flight) => {
-      const existing = acc.find((a) => a.name === flight.aircraftType);
-      if (existing) {
-        existing.count += 1;
-      } else {
-        acc.push({
-          id: flight.aircraftType,
-          name: flight.aircraftType,
-          count: 1,
-        });
-      }
-      return acc;
-    }, [])
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 4);
+  const fleetBreakdown = useMemo(() => {
+    return flights
+      .reduce((acc, flight) => {
+        const existing = acc.find((a) => a.name === flight.aircraftType);
+        if (existing) {
+          existing.count += 1;
+        } else {
+          acc.push({
+            id: flight.aircraftType,
+            name: flight.aircraftType,
+            count: 1,
+          });
+        }
+        return acc;
+      }, [])
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 4);
+  }, [flights]);
+
+  function formatAltitude(flight) {
+    if (flight.status === "LANDED") return "Landed";
+    if (flight.status === "SCHEDULED") return "—";
+    return flight.altitude
+      ? `${flight.altitude.toLocaleString("en-US")} m`
+      : "—";
+  }
+
+  function formatAltitudeFt(flight) {
+    if (flight.status === "LANDED") return "—";
+    if (flight.status === "SCHEDULED") return "On ground";
+    if (flight.status === "CANCELLED") return "Cancelled";
+    return flight.altitudeFt
+      ? `${flight.altitudeFt.toLocaleString("en-US")} ft`
+      : "—";
+  }
+
+  function formatSpeed(flight) {
+    if (flight.status !== "AIRBORNE") return "—";
+    return flight.speed ? `${flight.speed} km/h` : "—";
+  }
+
+  function formatMach(flight) {
+    if (flight.status !== "AIRBORNE") return "—";
+    return flight.mach ? `M ${flight.mach.toFixed(2)}` : "—";
+  }
 
   return (
     <div className="mainSite">
@@ -145,12 +176,16 @@ export default function Home() {
                   </span>
                 </td>
                 <td className="row">
-                  <span className="flightAltitude">{flight.altitude}</span>
-                  <span className="flightAltitude-ft">{flight.altitudeFt}</span>
+                  <span className="flightAltitude">
+                    {formatAltitude(flight)}
+                  </span>
+                  <span className="flightAltitude-ft">
+                    {formatAltitudeFt(flight)}
+                  </span>
                 </td>
                 <td className="row">
-                  <span className="flightSpeed">{flight.speed}</span>
-                  <span className="flightMach">{flight.mach}</span>
+                  <span className="flightSpeed">{formatSpeed(flight)}</span>
+                  <span className="flightMach">{formatMach(flight)}</span>
                 </td>
                 <td>
                   <span

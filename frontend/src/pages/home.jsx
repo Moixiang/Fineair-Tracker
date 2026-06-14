@@ -41,11 +41,42 @@ export default function Home() {
         const data = await res.json();
         setFlights(data);
       } catch (err) {
-        setFlights(flightsData); // falls back to local JSON
+        setFlights(flightsData);
       }
     };
     fetchFlights();
   }, []);
+
+  const popularRoutes = flights
+    .reduce((acc, flight) => {
+      const route = `${flight.from} → ${flight.to}`;
+      const existing = acc.find((r) => r.route === route);
+      if (existing) {
+        existing.flights += 1;
+      } else {
+        acc.push({ id: route, route, flights: 1 });
+      }
+      return acc;
+    }, [])
+    .sort((a, b) => b.flights - a.flights)
+    .slice(0, 4);
+
+  const fleetBreakdown = flights
+    .reduce((acc, flight) => {
+      const existing = acc.find((a) => a.name === flight.aircraftType);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        acc.push({
+          id: flight.aircraftType,
+          name: flight.aircraftType,
+          count: 1,
+        });
+      }
+      return acc;
+    }, [])
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 4);
 
   return (
     <div className="mainSite">
@@ -106,6 +137,7 @@ export default function Home() {
                   <span className="flightRoute">
                     <span className="flightAirport">{flight.from}</span>
                     <span className="flightArrow"> ——› </span>
+                    {/*<span className="flightArrow"> → </span>*/}
                     <span className="flightAirport">{flight.to}</span>
                   </span>
                   <span className="flightCities">
@@ -131,6 +163,37 @@ export default function Home() {
             ))}
           </tbody>
         </table>
+      </section>
+      <section className="popularityStats">
+        <div className="popularRoutes">
+          <span className="routesEyebrow">POPULAR ROUTES</span>
+          <span className="popularRoutesHeader">This week</span>
+          <div className="popularRoutesList">
+            {popularRoutes.map((route) => (
+              <div key={route.id} className="popularRoutesRow">
+                <span className="popularRoutesRoute">{route.route}</span>
+                <span className="popularRoutesCount">
+                  {route.flights} flight(s)
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="topAircraftTypes">
+          <span className="routesEyebrow">TOP AIRCRAFT TYPES</span>
+          <span className="popularRoutesHeader">Fleet breakdown</span>
+          <div className="popularRoutesList">
+            {fleetBreakdown.map((aircraft) => (
+              <div key={aircraft.id} className="popularRoutesRow">
+                <span className="popularRoutesRoute">{aircraft.name}</span>
+                <span className="popularRoutesCount">
+                  {aircraft.count.toLocaleString()}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -218,3 +218,60 @@
     color: #cc4444;
     border: 0.5px solid rgba(201, 95, 95, 0.28);
 }
+
+/* --------------------------- Popularity Stats --------------------------- */
+.popularityStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: #060e14;
+}
+
+.popularRoutes,
+.topAircraftTypes {
+    padding: 56px 72px;
+    border-right: 0.5px solid rgba(196, 164, 107, .1);
+}
+
+.routesEyebrow {
+    font-size: 9px;
+    letter-spacing: .28em;
+    color: #c4a46b;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.routesEyebrow::before {
+    content: '';
+    width: 24px;
+    height: 0.5px;
+    background: #c4a46b;
+    margin-right: 12px;
+}
+
+.popularRoutesHeader {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: #f0e8d8;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.popularRoutesRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 0.5px solid rgba(196, 164, 107, .08);
+    font-size: 12px;
+}
+
+.popularRoutesRoute {
+    color: #f0e4cc;
+}
+
+.popularRoutesCount {
+    color: #c4a46b;
+}

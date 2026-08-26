@@ -13,17 +13,6 @@ const Footer = () => {
 
   return (
     <div>
-      <section>
-        <div className="footerContainer">
-          <input
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-          <button onClick={getEmail}></button>
-        </div>
-      </section>
-
       <footer>
         <nav className="footerNavigationContainer">
           <div className="footerSiteLogo">

@@ -23,7 +23,6 @@ const App = () => {
     <div>
       <Header />
       <Home />
-      {data ? <p>Address: {data[0]?.address?.zipcode}</p> : <p>Laddar...</p>}
       <Footer />
     </div>
   );

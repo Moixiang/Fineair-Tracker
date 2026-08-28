@@ -6,19 +6,6 @@ import Home from "./pages/home";
 
 const App = () => {
   const [data, setData] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch("https://jsonplaceholder.typicode.com/users", {
-        method: "GET",
-      });
-      const result = await data.json();
-      console.log(result);
-      setData(result);
-    };
-    fetchData();
-  }, []);
-
   return (
     <div>
       <Header />

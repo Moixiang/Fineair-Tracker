@@ -275,3 +275,12 @@
 .popularRoutesCount {
     color: #c4a46b;
 }
+
+/* --------------------------- CO2 Emission --------------------------- */
+
+.co2Emission {
+    background: black;
+    padding: 80px 72px;
+    text-align: center;
+    border: none;
+}

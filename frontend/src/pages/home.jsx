@@ -230,6 +230,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="co2Emission">
+        <div className="co2Eyebrow"></div>
+        <div className="co2Label"></div>
+        <div className="co2Eyebrow"></div>
+        <div className="co2Sub"></div>
+      </section>
     </div>
   );
 }

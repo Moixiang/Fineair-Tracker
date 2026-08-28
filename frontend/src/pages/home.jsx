@@ -109,6 +109,45 @@ export default function Home() {
     return flight.mach ? `M ${flight.mach.toFixed(2)}` : "—";
   }
 
+  const co2Rates = {
+    "Gulfstream G650ER": 2100,
+    "Gulfstream G650": 2050,
+    "Gulfstream G700": 2200,
+    "Gulfstream G550": 1900,
+    "Bombardier Global 7500": 2300,
+    "Bombardier Global 6500": 2100,
+    "Bombardier Challenger 650": 1600,
+    "Dassault Falcon 8X": 1800,
+    "Dassault Falcon 7X": 1750,
+    "Falcon 7X": 1750,
+    "Falcon 8X": 1800,
+    "Falcon 2000LXS": 1500,
+    "Boeing BBJ": 3200,
+    "Boeing BBJ2": 3400,
+    "Boeing BBJ MAX 8": 3000,
+    "Airbus ACJ319": 3100,
+    "Airbus ACJ320neo": 2900,
+    "Embraer Praetor 600": 1400,
+    "Embraer Legacy 650": 1600,
+    "Citation Longitude": 1100,
+    "Citation XLS+": 900,
+  };
+
+  const defaultCo2Rates = 1800;
+
+  const co2Total = useMemo(() => {
+    return flights
+      .filter((f) => f.status === "AIRBORN")
+      .reduce((total, flight) => {
+        const rate = co2Rates[flight.aircraftType] || defaultCo2Rates;
+        return total + rate;
+      }, 0);
+  }, [flights]);
+
+  const airborneCount = useMemo(() => {
+    return flights.filter((f) => f.status === "AIRBORNE").length;
+  }, [flights]);
+
   return (
     <div className="mainSite">
       <section className="statContainer">
@@ -234,11 +273,13 @@ export default function Home() {
         <div className="co2Eyebrow">ENVIRONMENTAL IMPACT</div>
         <div className="co2Label">Estimated CO₂ emissions today</div>
         <div className="co2Num">
+          {co2Total.toLocaleString("en-US")}
           <span className="co2unit">kg CO₂e</span>
         </div>
         <div className="co2Sub">
-          CALCULATED FROM 247 ACTIVE FLIGHTS · UPDATED EVERY 60 SECONDS BASED ON
-          AIRCRAFT TYPE, DISTANCE FLOWN AND AVERAGE FUEL BURN RATES
+          CALCULATED FROM {airborneCount} ACTIVE FLIGHTS · UPDATED EVERY 60
+          SECONDS <br /> BASED ON AIRCRAFT TYPE, DISTANCE FLOWN AND AVERAGE FUEL
+          BURN RATES
         </div>
       </section>
     </div>

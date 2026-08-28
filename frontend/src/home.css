@@ -319,3 +319,11 @@
     font-weight: 300;
     color: #c4a46b;
 }
+
+.co2Sub {
+    font-size: 10px;
+    letter-spacing: .18em;
+    color: #9a8a72;
+    margin-top: 14px;
+    line-height: 1.8;
+}

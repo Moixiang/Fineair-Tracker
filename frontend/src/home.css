@@ -313,11 +313,22 @@
     margin-bottom: 12px;
 }
 
+.co2Num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 300;
+    color: #f0e8d8;
+    line-height: 1;
+    margin-bottom: 8px;
+    animation: co2count .8s ease both;
+}
+
 .co2unit {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     font-weight: 300;
     color: #c4a46b;
+    margin-left: 5px;
 }
 
 .co2Sub {

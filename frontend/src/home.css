@@ -303,3 +303,19 @@
     height: 0.5px;
     background: #c4a46b;
 }
+
+.co2Label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #d6c9b0;
+    letter-spacing: .08em;
+    margin-bottom: 12px;
+}
+
+.co2unit {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #c4a46b;
+}

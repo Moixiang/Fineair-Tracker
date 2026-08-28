@@ -233,8 +233,13 @@ export default function Home() {
       <section className="co2Emission">
         <div className="co2Eyebrow">ENVIRONMENTAL IMPACT</div>
         <div className="co2Label">Estimated CO₂ emissions today</div>
-        <div className="co2Num">20,814,000 kg CO₂e</div>
-        <div className="co2Sub"></div>
+        <div className="co2Num">
+          <span className="co2unit">kg CO₂e</span>
+        </div>
+        <div className="co2Sub">
+          CALCULATED FROM 247 ACTIVE FLIGHTS · UPDATED EVERY 60 SECONDS BASED ON
+          AIRCRAFT TYPE, DISTANCE FLOWN AND AVERAGE FUEL BURN RATES
+        </div>
       </section>
     </div>
   );

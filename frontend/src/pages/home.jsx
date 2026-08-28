@@ -110,25 +110,38 @@ export default function Home() {
   }
 
   const co2Rates = {
+    // Gulfstream
     "Gulfstream G650ER": 2100,
     "Gulfstream G650": 2050,
     "Gulfstream G700": 2200,
     "Gulfstream G550": 1900,
+
+    // Bombardier
     "Bombardier Global 7500": 2300,
     "Bombardier Global 6500": 2100,
     "Bombardier Challenger 650": 1600,
+
+    // Dassault — both with and without "Dassault" prefix
     "Dassault Falcon 8X": 1800,
     "Dassault Falcon 7X": 1750,
-    "Falcon 7X": 1750,
     "Falcon 8X": 1800,
+    "Falcon 7X": 1750,
     "Falcon 2000LXS": 1500,
+
+    // Boeing
     "Boeing BBJ": 3200,
     "Boeing BBJ2": 3400,
     "Boeing BBJ MAX 8": 3000,
+
+    // Airbus
     "Airbus ACJ319": 3100,
     "Airbus ACJ320neo": 2900,
+
+    // Embraer
     "Embraer Praetor 600": 1400,
     "Embraer Legacy 650": 1600,
+
+    // Citation
     "Citation Longitude": 1100,
     "Citation XLS+": 900,
   };
@@ -137,7 +150,7 @@ export default function Home() {
 
   const co2Total = useMemo(() => {
     return flights
-      .filter((f) => f.status === "AIRBORN")
+      .filter((f) => f.status === "AIRBORNE")
       .reduce((total, flight) => {
         const rate = co2Rates[flight.aircraftType] || defaultCo2Rates;
         return total + rate;
@@ -147,6 +160,8 @@ export default function Home() {
   const airborneCount = useMemo(() => {
     return flights.filter((f) => f.status === "AIRBORNE").length;
   }, [flights]);
+
+  console.log(flights.map((f) => f.aircraftType));
 
   return (
     <div className="mainSite">

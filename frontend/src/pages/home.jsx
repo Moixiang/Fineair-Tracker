@@ -231,9 +231,9 @@ export default function Home() {
         </div>
       </section>
       <section className="co2Emission">
-        <div className="co2Eyebrow"></div>
-        <div className="co2Label"></div>
-        <div className="co2Eyebrow"></div>
+        <div className="co2Eyebrow">ENVIRONMENTAL IMPACT</div>
+        <div className="co2Label">Estimated CO₂ emissions today</div>
+        <div className="co2Num">20,814,000 kg CO₂e</div>
         <div className="co2Sub"></div>
       </section>
     </div>

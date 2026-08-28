@@ -284,3 +284,22 @@
     text-align: center;
     border: none;
 }
+
+.co2Eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: #c4a46b;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.co2Eyebrow::before,
+.co2Eyebrow::after {
+    content: '';
+    width: 24px;
+    height: 0.5px;
+    background: #c4a46b;
+}

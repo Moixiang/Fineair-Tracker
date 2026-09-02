@@ -5,7 +5,6 @@ import Footer from "./components/footer";
 import Home from "./pages/home";
 
 const App = () => {
-  const [data, setData] = useState();
   return (
     <div>
       <Header />

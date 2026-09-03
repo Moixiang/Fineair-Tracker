@@ -1,0 +1,11 @@
+@media screen and (max-width: 1025px) {}
+
+@media screen and (max-width: 769px) {}
+
+@media screen and (max-width: 541px) {
+    .liveFlights {
+        display: none; /*Ta bort sen*/
+    }
+}
+
+@media screen and (max-width: 426px) {}

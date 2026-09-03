@@ -9,9 +9,54 @@
 }
 
 @media screen and (max-width: 541px) {
+
     .liveFlights {
+        padding: 56px 30px;
+    }
+
+    .tableRowHeader {
         display: none;
-        /*Ta bort sen*/
+    }
+
+    .flightTable tbody tr {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        background: rgba(196, 164, 107, 0.04);
+        border: 0.5px solid rgba(196, 164, 107, 0.15);
+        border-radius: 2px;
+        margin-bottom: 12px;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .flightTable td::before {
+        display: block;
+        font-size: 8px;
+        letter-spacing: 0.2em;
+        color: #6b5c42;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .flightTable td:nth-child(1)::before {
+        content: "AIRCRAFT";
+    }
+
+    .flightTable td:nth-child(2)::before {
+        content: "ROUTE";
+    }
+
+    .flightTable td:nth-child(3)::before {
+        content: "ALTITUDE";
+    }
+
+    .flightTable td:nth-child(4)::before {
+        content: "SPEED";
+    }
+
+    .flightTable td:nth-child(5)::before {
+        content: "STATUS";
     }
 
     .statContainer {
@@ -37,6 +82,16 @@
 }
 
 @media screen and (max-width: 426px) {
+    .flightTable tbody tr {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flightTable tbody tr td:last-child {
+        grid-column: 1 / -1;
+
+    }
+
     .co2Emission {
         padding: 50px 42px;
     }

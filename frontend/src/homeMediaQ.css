@@ -1,10 +1,11 @@
 @media screen and (max-width: 1025px) {}
 
 @media screen and (max-width: 769px) {
+
     .popularRoutes,
-        .topAircraftTypes {
-            padding: 46px 62px;
-        }
+    .topAircraftTypes {
+        padding: 46px 62px;
+    }
 }
 
 @media screen and (max-width: 541px) {
@@ -35,4 +36,8 @@
     }
 }
 
-@media screen and (max-width: 426px) {}
+@media screen and (max-width: 426px) {
+    .co2Emission {
+        padding: 50px 42px;
+    }
+}

@@ -89,7 +89,6 @@
 
     .flightTable tbody tr td:last-child {
         grid-column: 1 / -1;
-
     }
 
     .co2Emission {

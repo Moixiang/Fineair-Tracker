@@ -4,7 +4,17 @@
 
 @media screen and (max-width: 541px) {
     .liveFlights {
-        display: none; /*Ta bort sen*/
+        display: none;
+        /*Ta bort sen*/
+    }
+
+    .statContainer {
+        grid-template-columns: repeat(2, 1fr);
+        border-bottom: 0.5px solid rgba(196, 164, 107, 0.08);
+    }
+
+    .statCell:nth-child(-n + 2) {
+        border-bottom: 0.5px solid rgba(196, 164, 107, 0.08);
     }
 }
 

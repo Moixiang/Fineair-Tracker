@@ -161,8 +161,6 @@ export default function Home() {
     return flights.filter((f) => f.status === "AIRBORNE").length;
   }, [flights]);
 
-  console.log(flights.map((f) => f.aircraftType));
-
   return (
     <div className="mainSite">
       <section className="statContainer">

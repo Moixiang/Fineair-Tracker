@@ -1,5 +1,6 @@
 import "../header.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
     <header>
@@ -17,9 +18,12 @@ const Header = () => {
 
         <div className="searchBar">
           <input
-            type="search"
+            type="text"
             placeholder="Search tail number, aircraft or airport..."
           />
+          <button type="submit">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </div>
 
         <div>

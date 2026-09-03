@@ -49,16 +49,46 @@ header {
     color: #d6c9b0;
 }
 
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
 .searchBar input {
     background: rgba(255, 255, 255, 0.06);
     border: 0.5px solid rgba(196, 164, 107, 0.3);
     color: #f0e4cc;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 11px;
     padding: 6px 14px;
     width: 280px;
     outline: none;
-    border-radius: 1px;
-    letter-spacing: .04em;
+    border-right: none;
+    border-radius: 1px 0 0 1px;
+    letter-spacing: 0.04em;
+    transition: 500ms;
+}
+
+.searchBar button {
+    padding: 4px 10px;
+    border-top: 0.5px solid rgba(196, 164, 107, 0.3);
+    border-left: none;
+    border-right: 0.5px solid rgba(196, 164, 107, 0.3);
+    border-bottom: 0.5px solid rgba(196, 164, 107, 0.3);
+    color: #c4a46b;
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    border-radius: 0 1px 1px 0;
+    transition: 500ms;
+}
+
+.searchBar:focus-within input,
+.searchBar:focus-within button {
+    border-color: rgba(196, 164, 107, 0.6);
+}
+
+.searchBar button:hover {
+    background: rgba(196, 164, 107, 0.1);
 }
 
 .openNavbar {
